@@ -19,10 +19,8 @@ class OpenWeatherCall{
 //checking whether we actually got anything from ajax
  if($_GET["city"]){
      $cityName = $_GET["city"];
-      $apiKey='d72c9198e329c1ee1652b88a716f343f';
+      $apiKey='YOUR API KEY';
     $url = 'https://api.openweathermap.org/data/2.5/weather?q='.$cityName.'&APPID='.$apiKey;
-
-
 
 
 $openweathercall = new OpenWeatherCall();
