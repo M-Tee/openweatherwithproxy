@@ -2,16 +2,24 @@ $(document).ready(function(){
     $('form#get-weather').submit(function(event){
 
         event.preventDefault();
-        let city = $('#inputCity').val();
+        let cityName = $('#inputCity').val();
 
-        
-        console.log(city);
-        //ajax 
+        //making a get request to the proxy which makes the api call
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: './proxy/openweatherapicall.php',
-            data: {city:city }
+            data: {city:cityName },
+            //if success, it returns a response
+            success : function(response){
+                let parsedJson = $.parseJSON(response)
+                populateResults(parsedJson);
+                //console.log($.parseJSON(response));
+            }
           });
           return false;
+
+          function populateResults(parsedJson){
+            $('.response').text(parsedJson.name);
+          }
     })
 });
