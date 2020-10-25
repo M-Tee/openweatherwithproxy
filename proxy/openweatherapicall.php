@@ -1,5 +1,6 @@
 <?php
 class OpenWeatherCall{
+   //function to make that api call
    public function getRequest($url) {
        $curl = curl_init();
        curl_setopt($curl, CURLOPT_URL, $url);
@@ -15,8 +16,9 @@ class OpenWeatherCall{
        return $result;
    }
 }
- if($_POST["city"]){
-     $cityName = $_POST["city"];
+//checking whether we actually got anything from ajax
+ if($_GET["city"]){
+     $cityName = $_GET["city"];
       $apiKey='d72c9198e329c1ee1652b88a716f343f';
     $url = 'https://api.openweathermap.org/data/2.5/weather?q='.$cityName.'&APPID='.$apiKey;
 
@@ -25,6 +27,7 @@ class OpenWeatherCall{
 
 $openweathercall = new OpenWeatherCall();
 
+// we make the api call
 $results = $openweathercall->getRequest($url);
 
 echo $results;
