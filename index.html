@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>openweather proxy</title>
 
-    <main class="container">
-        <div class="offset-md-3 col-md-6 mt-md-5">
-            <form method="POST" class="form-inline" id="get-weather">
-                <div class="form-group mb-2">
-                    <label for="staticEmail2" class="sr-only">City label</label>
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="City or Country">
+        <!-- css tags -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- end css tags -->
+    </head>
+    <body>
+        <main class="container">
+            <div class="offset-md-3 col-md-6 mt-md-5">
+                <!-- get weather form -->
+                <form method="POST" class="form-inline" id="get-weather">
+                    <div class="form-group mb-2">
+                        <label for="City Label" class="sr-only">City label</label>
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="City or Country">
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="City or Country" class="sr-only">City or Country</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Nairobi" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2 btn-get-weather">Get Weather</button>
+                </form>
+                <!-- end of get weather form -->
+                <div class="response">
+                    <p class="response-text"></p>
                 </div>
-                <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputPassword2" class="sr-only">City or Country</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="Nairobi">
-                </div>
-                <button type="submit" class="btn btn-primary mb-2 btn-get-weather">Get Weather</button>
-          </form>
-        </div>
-    </main><script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
-		
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-</body>
+            </div>
+        </main>  
+        <!--Start of Scripts -->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>            
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <!-- End Scripts -->
+    </body>
 </html>
